@@ -1,7 +1,7 @@
 Name:		exfat-utils
 Summary:	Utilities for exFAT file system
 Version:	1.0.1
-Release:	1%{?dist}
+Release:	2%{?dist}
 License:	GPLv3+
 Group:		System Environment/Base
 Source0:	http://exfat.googlecode.com/files/exfat-utils-%{version}.tar.gz
@@ -39,6 +39,9 @@ cp -a label/exfatlabel.8 %{buildroot}/%{_mandir}/man8/exfatlabel.8
 %{_mandir}/man8/*
 
 %changelog
+* Sun Aug 31 2014 Sérgio Basto <sergio@serjux.com> - 1.0.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
+
 * Sun Mar 17 2013 TingPing <tingping@tingping.se> - 1.0.1-1
 - Initial package
 
