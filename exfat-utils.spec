@@ -6,7 +6,6 @@ License:	GPLv2+
 Group:		System Environment/Base
 Source0:	https://github.com/relan/exfat/releases/download/v%{version}/exfat-utils-%{version}.tar.gz
 URL:		https://github.com/relan/exfat
-BuildRequires:	scons
 
 %description
 A set of utilities for creating, checking, dumping and labeling exFAT file
@@ -16,17 +15,14 @@ system.
 %setup -q
 
 %build
-scons CFLAGS="%{optflags}"
+%configure
+
+make %{?_smp_mflags}
+
 
 %install
-scons install DESTDIR=%{buildroot}/%{_bindir}
-mkdir -p %{buildroot}/%{_mandir}/man8/
-cp -a dump/dumpexfat.8 %{buildroot}/%{_mandir}/man8/dumpexfat.8
-cp -a fsck/exfatfsck.8 %{buildroot}/%{_mandir}/man8/exfatfsck.8
-ln -s %{_mandir}/man8/exfatfsck.8 %{buildroot}/%{_mandir}/man8/fsck.exfat.8
-cp -a mkfs/mkexfatfs.8 %{buildroot}/%{_mandir}/man8/mkexfatfs.8
-ln -s %{_mandir}/man8/mkexfatfs.8 %{buildroot}/usr/share/man/man8/mkfs.exfat.8
-cp -a label/exfatlabel.8 %{buildroot}/%{_mandir}/man8/exfatlabel.8
+make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
+
 
 %files
 %doc COPYING
