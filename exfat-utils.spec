@@ -1,11 +1,11 @@
 Name:		exfat-utils
 Summary:	Utilities for exFAT file system
-Version:	1.1.1
+Version:	1.2.2
 Release:	1%{?dist}
 License:	GPLv2+
 Group:		System Environment/Base
-Source0:	https://docs.google.com/uc?export=download&id=0B7CLI-REKbE3UzNtSkRvdHBpdjQ#/%{name}-%{version}.tar.gz
-URL:		http://code.google.com/p/exfat/
+Source0:	https://github.com/relan/exfat/releases/download/v%{version}/exfat-utils-%{version}.tar.gz
+URL:		https://github.com/relan/exfat
 BuildRequires:	scons
 
 %description
@@ -39,6 +39,9 @@ cp -a label/exfatlabel.8 %{buildroot}/%{_mandir}/man8/exfatlabel.8
 %{_mandir}/man8/*
 
 %changelog
+* Sat Nov 14 2015 Nicolas Chauvet <kwizart@gmail.com> - 1.2.2-1
+- Update to 1.2.2
+
 * Sat Dec 20 2014 TingPing <tingping@tingping.se> - 1.1.1-1
 - Update to 1.1.1
 
