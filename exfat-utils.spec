@@ -22,16 +22,23 @@ make %{?_smp_mflags}
 
 %install
 make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
+mkdir -p %{buildroot}/%{_mandir}/man8/
+cp -a dump/dumpexfat.8 %{buildroot}/%{_mandir}/man8/dumpexfat.8
+cp -a fsck/exfatfsck.8 %{buildroot}/%{_mandir}/man8/exfatfsck.8
+ln -s %{_mandir}/man8/exfatfsck.8 %{buildroot}/%{_mandir}/man8/fsck.exfat.8
+cp -a mkfs/mkexfatfs.8 %{buildroot}/%{_mandir}/man8/mkexfatfs.8
+ln -s %{_mandir}/man8/mkexfatfs.8 %{buildroot}/usr/share/man/man8/mkfs.exfat.8
+cp -a label/exfatlabel.8 %{buildroot}/%{_mandir}/man8/exfatlabel.8
 
 
 %files
 %doc COPYING
-%{_bindir}/dumpexfat
-%{_bindir}/exfatfsck
-%{_bindir}/fsck.exfat
-%{_bindir}/mkexfatfs
-%{_bindir}/mkfs.exfat
-%{_bindir}/exfatlabel
+%{_sbindir}/dumpexfat
+%{_sbindir}/exfatfsck
+%{_sbindir}/fsck.exfat
+%{_sbindir}/mkexfatfs
+%{_sbindir}/mkfs.exfat
+%{_sbindir}/exfatlabel
 %{_mandir}/man8/*
 
 %changelog
