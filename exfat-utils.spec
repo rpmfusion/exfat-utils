@@ -1,6 +1,6 @@
 Name:		exfat-utils
 Summary:	Utilities for exFAT file system
-Version:	1.2.3
+Version:	1.2.4
 Release:	1%{?dist}
 License:	GPLv2+
 Group:		System Environment/Base
@@ -21,14 +21,9 @@ make %{?_smp_mflags}
 
 
 %install
-make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
-mkdir -p %{buildroot}/%{_mandir}/man8/
-cp -a dump/dumpexfat.8 %{buildroot}/%{_mandir}/man8/dumpexfat.8
-cp -a fsck/exfatfsck.8 %{buildroot}/%{_mandir}/man8/exfatfsck.8
-ln -s %{_mandir}/man8/exfatfsck.8 %{buildroot}/%{_mandir}/man8/fsck.exfat.8
-cp -a mkfs/mkexfatfs.8 %{buildroot}/%{_mandir}/man8/mkexfatfs.8
-ln -s %{_mandir}/man8/mkexfatfs.8 %{buildroot}/usr/share/man/man8/mkfs.exfat.8
-cp -a label/exfatlabel.8 %{buildroot}/%{_mandir}/man8/exfatlabel.8
+make install DESTDIR="$RPM_BUILD_ROOT"
+ln -s %{_mandir}/man8/exfatfsck.8.gz %{buildroot}/%{_mandir}/man8/fsck.exfat.8.gz
+ln -s %{_mandir}/man8/mkexfatfs.8.gz %{buildroot}/usr/share/man/man8/mkfs.exfat.8.gz
 
 
 %files
@@ -42,6 +37,9 @@ cp -a label/exfatlabel.8 %{buildroot}/%{_mandir}/man8/exfatlabel.8
 %{_mandir}/man8/*
 
 %changelog
+* Sun Jul 24 2016 Patrick Griffis <tingping@tingping.se> - 1.2.4-1
+- Update to 1.2.4
+
 * Wed Mar 30 2016 Orion Poplawski <orion@cora.nwra.com> - 1.2.3-1
 - Update to 1.2.3
 
