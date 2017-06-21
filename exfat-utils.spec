@@ -1,33 +1,30 @@
-Name:		exfat-utils
-Summary:	Utilities for exFAT file system
-Version:	1.2.4
-Release:	1%{?dist}
-License:	GPLv2+
-Group:		System Environment/Base
-Source0:	https://github.com/relan/exfat/releases/download/v%{version}/exfat-utils-%{version}.tar.gz
-URL:		https://github.com/relan/exfat
+Name:       exfat-utils
+Summary:    Utilities for exFAT file system
+Version:    1.2.7
+Release:    1%{?dist}
+License:    GPLv2+
+Group:      System Environment/Base
+Source0:    https://github.com/relan/exfat/releases/download/v%{version}/%{name}-%{version}.tar.gz
+URL:        https://github.com/relan/exfat
 
 %description
 A set of utilities for creating, checking, dumping and labeling exFAT file
 system.
 
 %prep
-%setup -q
+%autosetup
 
 %build
 %configure
-
-make %{?_smp_mflags}
-
+%make_build
 
 %install
-make install DESTDIR="$RPM_BUILD_ROOT"
+%make_install
 ln -s %{_mandir}/man8/exfatfsck.8.gz %{buildroot}/%{_mandir}/man8/fsck.exfat.8.gz
 ln -s %{_mandir}/man8/mkexfatfs.8.gz %{buildroot}/usr/share/man/man8/mkfs.exfat.8.gz
 
-
 %files
-%doc COPYING
+%license COPYING
 %{_sbindir}/dumpexfat
 %{_sbindir}/exfatfsck
 %{_sbindir}/fsck.exfat
@@ -37,6 +34,18 @@ ln -s %{_mandir}/man8/mkexfatfs.8.gz %{buildroot}/usr/share/man/man8/mkfs.exfat.
 %{_mandir}/man8/*
 
 %changelog
+* Wed Jun 21 2017 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.7-1
+- Update to 1.2.7
+
+* Sun Mar 19 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 1.2.5-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
+* Sun Jan 08 2017 Patrick Griffis <tingping@tingping.se> - 1.2.5-1
+- Update to 1.2.5
+
+* Tue Aug 16 2016 Patrick Griffis <tingping@tingping.se> - 1.2.4-2
+- Modernize spec file
+
 * Sun Jul 24 2016 Patrick Griffis <tingping@tingping.se> - 1.2.4-1
 - Update to 1.2.4
 
