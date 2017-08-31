@@ -1,7 +1,7 @@
 Name:       exfat-utils
 Summary:    Utilities for exFAT file system
 Version:    1.2.7
-Release:    1%{?dist}
+Release:    2%{?dist}
 License:    GPLv2+
 Group:      System Environment/Base
 Source0:    https://github.com/relan/exfat/releases/download/v%{version}/%{name}-%{version}.tar.gz
@@ -34,6 +34,9 @@ ln -s %{_mandir}/man8/mkexfatfs.8.gz %{buildroot}/usr/share/man/man8/mkfs.exfat.
 %{_mandir}/man8/*
 
 %changelog
+* Thu Aug 31 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 1.2.7-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
+
 * Wed Jun 21 2017 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.7-1
 - Update to 1.2.7
 
