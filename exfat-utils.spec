@@ -37,9 +37,6 @@ ln -s %{_mandir}/man8/mkexfatfs.8.gz %{buildroot}/usr/share/man/man8/mkfs.exfat.
 * Mon Feb 05 2018 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.8-1
 - Update to 1.2.8
 
-* Thu Aug 31 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 1.2.7-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
-
 * Wed Jun 21 2017 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.7-1
 - Update to 1.2.7
 
