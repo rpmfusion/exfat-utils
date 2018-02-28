@@ -1,7 +1,7 @@
 Name:       exfat-utils
 Summary:    Utilities for exFAT file system
 Version:    1.2.8
-Release:    1%{?dist}
+Release:    2%{?dist}
 License:    GPLv2+
 Group:      System Environment/Base
 Source0:    https://github.com/relan/exfat/releases/download/v%{version}/%{name}-%{version}.tar.gz
@@ -34,6 +34,9 @@ ln -s %{_mandir}/man8/mkexfatfs.8.gz %{buildroot}/usr/share/man/man8/mkfs.exfat.
 %{_mandir}/man8/*
 
 %changelog
+* Wed Feb 28 2018 RPM Fusion Release Engineering <leigh123linux@googlemail.com> - 1.2.8-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
+
 * Mon Feb 05 2018 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.8-1
 - Update to 1.2.8
 
