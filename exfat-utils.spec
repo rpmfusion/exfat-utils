@@ -1,7 +1,7 @@
 Name:       exfat-utils
 Summary:    Utilities for exFAT file system
 Version:    1.3.0
-Release:    4%{?dist}
+Release:    5%{?dist}
 License:    GPLv2+
 Source0:    https://github.com/relan/exfat/releases/download/v%{version}/%{name}-%{version}.tar.gz
 URL:        https://github.com/relan/exfat
@@ -35,6 +35,9 @@ ln -s %{_mandir}/man8/mkexfatfs.8.gz %{buildroot}/usr/share/man/man8/mkfs.exfat.
 %{_mandir}/man8/*
 
 %changelog
+* Mon Aug 17 2020 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1.3.0-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
 * Tue Feb 04 2020 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1.3.0-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
